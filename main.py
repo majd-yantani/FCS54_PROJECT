@@ -54,4 +54,7 @@ class WeDeliver:
         def view_drivers(self):
             for key, value in self.drivers.items():
                 print(f"{key:03d}, {value['name']}, start city: {value['start_city']}")
+        def add_driver(self):
+            driver_name = input("Enter the name of the driver you want to add: ").strip()
+            start_city = input("Enter the start city of this driver: ").strip().capitalize()
 
