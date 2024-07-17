@@ -51,4 +51,7 @@ class WeDeliver:
                         stop=True
                 else:
                     print("Invalid input! Please try again.")
+        def view_drivers(self):
+            for key, value in self.drivers.items():
+                print(f"{key:03d}, {value['name']}, start city: {value['start_city']}")
 
