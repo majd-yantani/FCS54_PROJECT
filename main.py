@@ -75,4 +75,9 @@ class WeDeliver:
         print(f"Driver {driver_name} added with new ID {new_id:03d}.")
         def cities_menu(self):
             while True:
+                print("Enter:")
+                print("1. Show cities")
+                print("2. Print neighboring cities")
+                print("3. Print drivers delivering to city")
+                print("4. Go back to the main menu")
 
