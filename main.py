@@ -35,3 +35,10 @@ class WeDeliver:
                         break
                 else:
                         print("Invalid input! Please try again.")
+        def drivers_menu(self):
+            stop=False
+            while not stop:
+            print("Enter: ")
+            print("1. To view all the drivers")
+            print("2. To add a driver")
+            print("3. To go back to the main menu")
