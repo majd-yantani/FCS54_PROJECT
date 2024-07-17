@@ -62,4 +62,12 @@ class WeDeliver:
             if add_city == "yes":
                 neighbors = input(f"Enter the names of the neighboring cities for {start_city} (comma separated): ").strip().capitalize().split(", ")
                 self.cities[start_city] = neighbors
+            for neighbor in neighbors:
+                    if neighbor not in self.cities:
+                        self.cities[neighbor] = [start_city]
+                    else:
+                        self.cities[neighbor].append(start_city)
+            else:
+                print("Driver not added.")
+                return 
 
