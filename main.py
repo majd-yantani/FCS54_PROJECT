@@ -42,3 +42,13 @@ class WeDeliver:
                 print("1. To view all the drivers")
                 print("2. To add a driver")
                 print("3. To go back to the main menu")
+                choice = input("Enter your choice: ").strip()
+                if choice == "1":
+                        self.view_drivers()
+                elif choice == "2":
+                        self.add_driver()
+                elif choice == "3":
+                        stop=True
+                else:
+                    print("Invalid input! Please try again.")
+
