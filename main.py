@@ -101,3 +101,16 @@ class WeDeliver:
             print(f"The neighboring cities are: {', '.join(self.cities[city])}")
         else:
             print("City not found in the database!")
+        def print_drivers_delivering(self):
+            city = input("Enter the name of the city to list drivers delivering to: ").strip().capitalize()
+        delivering_drivers = []
+
+        reachable_cities = self.bfs_reachable_cities(city)
+        for driver_id, info in self.drivers.items():
+            if info['start_city'] in reachable_cities:
+                delivering_drivers.append(info['name'])
+
+        if delivering_drivers:
+            print(f"Drivers delivering to {city}: {', '.join(delivering_drivers)}")
+        else:
+            print(f"No drivers can deliver to {city}.")
