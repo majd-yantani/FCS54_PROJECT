@@ -80,4 +80,14 @@ class WeDeliver:
                 print("2. Print neighboring cities")
                 print("3. Print drivers delivering to city")
                 print("4. Go back to the main menu")
-
+                choice = input("Enter your choice: ").strip()
+                if choice == "1":
+                    self.show_cities()
+                elif choice == "2":
+                    self.neighboring_cities()
+                elif choice == "3":
+                    self.print_drivers_delivering()
+                elif choice == "4":
+                    break
+                else:
+                     print("Invalid input! Please try again.")
