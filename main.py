@@ -70,4 +70,7 @@ class WeDeliver:
             else:
                 print("Driver not added.")
                 return 
+        new_id = max(self.drivers.keys()) + 1
+        self.drivers[new_id] = {"name": driver_name, "start_city": start_city}
+        print(f"Driver {driver_name} added with new ID {new_id:03d}.")
 
