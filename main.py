@@ -21,3 +21,7 @@ class WeDeliver:
         }
         def main_menu(self):
             while True:
+                print("Hello! Please enter: ")
+                print("1. To go to the drivers' menu")
+                print("2. To go to the cities' menu")
+                print("3. To exit the system")
