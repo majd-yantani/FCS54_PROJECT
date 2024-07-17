@@ -57,4 +57,9 @@ class WeDeliver:
         def add_driver(self):
             driver_name = input("Enter the name of the driver you want to add: ").strip()
             start_city = input("Enter the start city of this driver: ").strip().capitalize()
+            if start_city not in self.cities:
+             add_city = input("City not found in the database! Would you like to add it? (yes/no): ").strip().lower()
+            if add_city == "yes":
+                neighbors = input(f"Enter the names of the neighboring cities for {start_city} (comma separated): ").strip().capitalize().split(", ")
+                self.cities[start_city] = neighbors
 
