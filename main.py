@@ -91,3 +91,8 @@ class WeDeliver:
                     break
                 else:
                      print("Invalid input! Please try again.")
+        def show_cities(self):
+            print("Cities in the system:")
+            for city in self.cities.keys():
+                print(city)
+
