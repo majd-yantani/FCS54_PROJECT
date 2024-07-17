@@ -114,3 +114,23 @@ class WeDeliver:
             print(f"Drivers delivering to {city}: {', '.join(delivering_drivers)}")
         else:
             print(f"No drivers can deliver to {city}.")
+        
+    def bfs_reachable_cities(self, start_city):
+        if start_city not in self.cities:
+            return set()
+
+        visited = set()
+        queue = deque([start_city])
+
+        while queue:
+            current_city = queue.popleft()
+            if current_city not in visited:
+                visited.add(current_city)
+                for neighbor in self.cities[current_city]:
+                    if neighbor not in visited:
+                        queue.append(neighbor)
+
+        return visited
+
+we_deliver = WeDeliver()
+we_deliver.main_menu()
