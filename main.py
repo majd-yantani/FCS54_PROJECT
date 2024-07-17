@@ -95,4 +95,9 @@ class WeDeliver:
             print("Cities in the system:")
             for city in self.cities.keys():
                 print(city)
-
+        def neighboring_cities(self):
+            city = input("Enter the name of the city you want to know the neighboring cities of: ").strip().capitalize()
+        if city in self.cities:
+            print(f"The neighboring cities are: {', '.join(self.cities[city])}")
+        else:
+            print("City not found in the database!")
