@@ -150,7 +150,3 @@ class WeDeliver:
 
 we_deliver = WeDeliver()
 we_deliver.main_menu()
-
-
-we_deliver = WeDeliver()
-we_deliver.main_menu()
