@@ -58,26 +58,32 @@ class WeDeliver:
             print(f"{key:03d}, {value['name']}, start city: {value['start_city']}")
 
     def add_driver(self):
-        driver_name = input("Enter the name of the driver you want to add: ").strip()
-        start_city = input("Enter the start city of this driver: ").strip().capitalize()
-        if start_city not in self.cities:
-            add_city = input("City not found in the database! Would you like to add it? (yes/no): ").strip().lower()
-            if add_city == "yes":
-                neighbors = input(f"Enter the names of the neighboring cities for {start_city} (comma separated): ").strip().capitalize().split(", ")
-                self.cities[start_city] = neighbors
-                for neighbor in neighbors:
-                    if neighbor not in self.cities:
-                        self.cities[neighbor] = [start_city]
-                    else:
-                        self.cities[neighbor].append(start_city)
-                print(f"City {start_city} added with neighbors {', '.join(neighbors)}.")
-            else:
-                print("Driver not added.")
-                return 
+        while True:
+            driver_name = input("Enter the name of the driver you want to add: ").strip()
+            if not driver_name.replace(' ', '').isalpha(): 
+                print("Invalid name! Please enter a valid name containing only letters.")
+                continue
+            
+            start_city = input("Enter the start city of this driver: ").strip().capitalize()
+            if start_city not in self.cities:
+                add_city = input("City not found in the database! Would you like to add it? (yes/no): ").strip().lower()
+                if add_city == "yes":
+                    neighbors = input(f"Enter the names of the neighboring cities for {start_city} (comma separated): ").strip().capitalize().split(", ")
+                    self.cities[start_city] = neighbors
+                    for neighbor in neighbors:
+                        if neighbor not in self.cities:
+                            self.cities[neighbor] = [start_city]
+                        else:
+                            self.cities[neighbor].append(start_city)
+                    print(f"City {start_city} added with neighbors {', '.join(neighbors)}.")
+                else:
+                    print("Driver not added.")
+                    return 
+            new_id = max(self.drivers.keys()) + 1
+            self.drivers[new_id] = {"name": driver_name, "start_city": start_city}
+            print(f"Driver {driver_name} added with new ID {new_id:03d}.")
+            break
 
-        new_id = max(self.drivers.keys()) + 1
-        self.drivers[new_id] = {"name": driver_name, "start_city": start_city}
-        print(f"Driver {driver_name} added with new ID {new_id:03d}.")
 
     def cities_menu(self):
         while True:
